@@ -9,7 +9,7 @@ class TodoItem extends React.Component {
     }
   }
   render() {
-    const { completed, text, onDeleteTodo, onToggleTodo } = this.props
+    const { id, completed, text, onDeleteTodo, onToggleTodo } = this.props
     let spanEle = <span style={{ textDecoration: completed ? 'line-through' : 'none', cursor: 'pointer' }}
       onClick={this.modifyHandler}>
       {text}
@@ -19,9 +19,9 @@ class TodoItem extends React.Component {
 
     return <div style={{ marginTop: '10px', marginLeft: '20px' }}>
       <input type="checkbox" style={{ margin: '5px' }} checked={completed}
-        onChange={onToggleTodo} />
+        onChange={() => onToggleTodo(id)} />
       {this.state.isEditable ? inputEle : spanEle}
-      <button style={{ marginLeft: '5px' }} onClick={onDeleteTodo}>删除</button>
+      <button style={{ marginLeft: '5px' }} onClick={() => onDeleteTodo(id)}>删除</button>
     </div>
   }
   

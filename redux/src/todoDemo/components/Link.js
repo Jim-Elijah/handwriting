@@ -2,22 +2,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Link = ({ active, children, onClick }) => {
-  if (active) {
-    return <span style={{color: 'blue', textDecoration: 'underline'}}>{children}</span>
+class Link extends React.Component {
+  render() {
+      const { active, children, onClick } = this.props
+      if (active) {
+        return <span style={{color: 'blue', textDecoration: 'underline'}}>{children}</span>
+      }
+    
+      return (
+        <span
+          style={{cursor: 'pointer'}}
+          onClick={e => {
+            e.preventDefault()
+            onClick()
+          }}
+        >
+          {children}
+        </span>
+      )
   }
-
-  return (
-    <span
-      style={{cursor: 'pointer'}}
-      onClick={e => {
-        e.preventDefault()
-        onClick()
-      }}
-    >
-      {children}
-    </span>
-  )
 }
 
 Link.propTypes = {

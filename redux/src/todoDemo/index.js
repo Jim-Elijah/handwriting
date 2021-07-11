@@ -1,6 +1,6 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-// import { Provider } from './lib/react-redux'
+// import { connect } from 'react-redux'
+import { Provider } from './lib/react-redux'
 // import { createStore } from 'redux'
 import { createStore, applyMiddleware } from './lib/redux'
 import reducer from './reducers'
@@ -21,9 +21,10 @@ const loggerState = (store) => (dispatch) => (action) => {
 
 let store
 
-export default class APP extends React.Component {
+class APP extends React.Component {
   constructor(props) {
     super(props)
+
     store = createStore(reducer, this.getState())
     store = applyMiddleware(store, [loggerAction, loggerState]);
     console.log('entry state', store.getState())
@@ -33,19 +34,34 @@ export default class APP extends React.Component {
     const data = localStorage.getItem("todo");
     return data ? JSON.parse(data) : {};
   }
-  // 保存本地存储数据
-  saveState = (data) => {
+  保存本地存储数据
+  saveStorage = (data) => {
     localStorage.setItem("todo", JSON.stringify(data));
   }
   componentDidMount() {
-    // 窗口关闭时保存数据
-    window.onbeforeunload = () => {
-      this.saveState(store.getState());
-    };
+    const { store } = this.props;
+    console.log('todoDemo didMount')
+    // alert('todoDemo didMount')
+    // 窗口关闭时保存数
+    window.addEventListener('beforeunload', () => {
+      // console.log('beforeunload', store.getState())
+      // alert('beforeunload', store.getState())
+      this.saveStorage(store.getState());
+    })
   }
   render() {
     return <Provider store={store}>
       <App />
     </Provider>
+    // return <App />
   }
 }
+
+
+// export default connect((state) => {
+//   return {
+//     state
+//   }
+// }, () => ({}))(APP)
+
+export default APP

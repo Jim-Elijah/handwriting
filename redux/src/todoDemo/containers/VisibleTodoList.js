@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
-// import { connect } from '../lib/react-redux'
+// import { connect } from 'react-redux'
+import { connect } from '../lib/react-redux'
 import actions from '../actions'
 import TodoList from '../components/TodoList'
 
@@ -35,7 +35,6 @@ const mapDispatchToProps = dispatch => {
     onModifyTodo: (id, text) => {
       dispatch(modifyTodo(id, text))
     },
-    // 切换完成状态
     onToggleTodo: id => {
       dispatch(toggleTodo(id))
     },

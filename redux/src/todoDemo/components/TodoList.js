@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import TodoItem from './TodoItem';
 
 // 函数组件 { todos, onTodoClick } = props
-const TodoList = ({ todos, onDeleteTodo, onModifyTodo, onToggleTodo }) => {
-  // console.log('todos', todos);
+const TodoList = ({ todos=[], onDeleteTodo, onModifyTodo, onToggleTodo }) => {
+  console.log('todos', todos);
   return (
     <React.Fragment>
       {todos.map(todo => (
-        <TodoItem key={todo.id} {...todo} onDeleteTodo={() => onDeleteTodo(todo.id)}
-          onModifyTodo={onModifyTodo} onToggleTodo={() => onToggleTodo(todo.id)} />
+        <TodoItem key={todo.id} {...todo} onDeleteTodo={onDeleteTodo}
+          onModifyTodo={onModifyTodo} onToggleTodo={() => onToggleTodo} />
       ))}
     </React.Fragment>
   )
