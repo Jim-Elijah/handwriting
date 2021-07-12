@@ -45,7 +45,7 @@ class APP extends React.Component {
     // 窗口关闭时保存数
     window.addEventListener('beforeunload', () => {
       // console.log('beforeunload', store.getState())
-      // alert('beforeunload', store.getState())
+      alert('beforeunload', store.getState())
       this.saveStorage(store.getState());
     })
   }

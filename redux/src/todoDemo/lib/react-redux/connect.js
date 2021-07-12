@@ -30,7 +30,7 @@ const connect = (mapStateToProps=()=>{}, mapDispatchToProps, mergeProps, options
             keys.forEach(key => {
                 dispatchProps[key] = () => {
                     // console.log('object', dispatchProps[key])
-                    dispatch(mapDispatchToProps[key], this.state.ownProps)
+                    dispatch(mapDispatchToProps[key])
                 }
             })
           } else if(typeof mapDispatchToProps === 'function') {
@@ -40,10 +40,10 @@ const connect = (mapStateToProps=()=>{}, mapDispatchToProps, mergeProps, options
           else {
             console.error(`${mapDispatchToProps} is neither an"object" nor a "function"!`)
           }
-          // console.log('ownProps', this.state.ownProps)
-          // console.log('stateProps', stateProps)
-          // console.log('dispatchProps', dispatchProps)
-          // console.log('-----------------------------------')
+          console.log('ownProps', this.state.ownProps)
+          console.log('stateProps', stateProps)
+          console.log('dispatchProps', dispatchProps)
+          console.log('-----------------------------------')
           this.setState({
               allProps: {
                   ...this.state.ownProps,

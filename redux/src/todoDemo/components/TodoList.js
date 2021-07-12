@@ -9,7 +9,7 @@ const TodoList = ({ todos=[], onDeleteTodo, onModifyTodo, onToggleTodo }) => {
     <React.Fragment>
       {todos.map(todo => (
         <TodoItem key={todo.id} {...todo} onDeleteTodo={onDeleteTodo}
-          onModifyTodo={onModifyTodo} onToggleTodo={() => onToggleTodo} />
+          onModifyTodo={onModifyTodo} onToggleTodo={onToggleTodo} />
       ))}
     </React.Fragment>
   )
