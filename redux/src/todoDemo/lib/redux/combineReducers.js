@@ -1,5 +1,5 @@
 export default function combineReducers(reducerObj) {
-  return function (state, action) {
+  return function (state = {}, action) {
     const keys = Object.keys(reducerObj);
     const newState = {}
     keys.forEach(key => {

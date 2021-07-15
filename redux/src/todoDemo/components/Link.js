@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 class Link extends React.Component {
   render() {
+      // console.log('link', this.props)
       const { active, children, onClick } = this.props
       if (active) {
         return <span style={{color: 'blue', textDecoration: 'underline'}}>{children}</span>
@@ -23,10 +24,10 @@ class Link extends React.Component {
   }
 }
 
-Link.propTypes = {
-  active: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
-}
+// Link.propTypes = {
+//   active: PropTypes.bool.isRequired,
+//   children: PropTypes.node.isRequired,
+//   onClick: PropTypes.func.isRequired
+// }
 
 export default Link

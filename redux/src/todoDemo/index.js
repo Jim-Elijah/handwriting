@@ -20,27 +20,34 @@ const loggerState = (store) => (dispatch) => (action) => {
 };
 
 let store
+let initialState = {
+  todos: [],
+  visibilityFilter: 'SHOW_ALL',
+}
 
 class APP extends React.Component {
   constructor(props) {
     super(props)
 
-    store = createStore(reducer, this.getState())
+    // store = createStore(reducer, this.getState())
+    // store = createStore(reducer, initialState)
+    store = createStore(reducer)
     store = applyMiddleware(store, [loggerAction, loggerState]);
-    console.log('entry state', store.getState())
+    console.log('store', store);
+    console.log('state', store.getState());
   }
   // 读取本地存储的数据 
   getState = () => {
     const data = localStorage.getItem("todo");
     return data ? JSON.parse(data) : {};
   }
-  保存本地存储数据
+  // 保存本地存储数据
   saveStorage = (data) => {
     localStorage.setItem("todo", JSON.stringify(data));
   }
   componentDidMount() {
     const { store } = this.props;
-    console.log('todoDemo didMount')
+    // console.log('todoDemo didMount')
     // alert('todoDemo didMount')
     // 窗口关闭时保存数
     window.addEventListener('beforeunload', () => {

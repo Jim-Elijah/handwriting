@@ -1,5 +1,6 @@
-export default function createStore(reducer, initalState={}, enhance = {}) {
-  let state = initalState,
+export default function createStore(reducer, initalState, enhance = {}) {
+  console.log('createStore');
+  let state = initalState || {},
     listeners = []
   const getState = () => {
     return state
@@ -17,7 +18,7 @@ export default function createStore(reducer, initalState={}, enhance = {}) {
   const unsubscribe = (listener) => {
     let index = listeners.indexOf(listener)
     if (index === -1) {
-      listeners.splice(index)
+      listeners.splice(index, 1)
     }
   }
   return {
@@ -27,3 +28,19 @@ export default function createStore(reducer, initalState={}, enhance = {}) {
   }
 }
 
+// export default function createStore(reducer) {
+//   let state = {};
+//   const listeners = [];
+//   const getState = () => state;
+//   const dispatch = (action) => {
+//       state = reducer(state, action);
+//       listeners.forEach((listener) => listener());
+//   };
+//   const subscribe = (listener) => listeners.push(listener);
+
+//   return {
+//       getState,
+//       dispatch,
+//       subscribe,
+//   };
+// };

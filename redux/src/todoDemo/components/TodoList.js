@@ -1,10 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import TodoItem from './TodoItem';
 
-// 函数组件 { todos, onTodoClick } = props
 const TodoList = ({ todos=[], onDeleteTodo, onModifyTodo, onToggleTodo }) => {
-  console.log('todos', todos);
+  // console.log('todos', todos);
   return (
     <React.Fragment>
       {todos.map(todo => (
@@ -15,17 +14,17 @@ const TodoList = ({ todos=[], onDeleteTodo, onModifyTodo, onToggleTodo }) => {
   )
 }
 
-TodoList.propTypes = {
-  todos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      completed: PropTypes.bool.isRequired,
-      text: PropTypes.string.isRequired
-    }).isRequired
-  ).isRequired,
-  onDeleteTodo: PropTypes.func.isRequired,
-  onModifyTodo: PropTypes.func.isRequired,
-  onToggleTodo: PropTypes.func.isRequired
-}
+// TodoList.propTypes = {
+//   todos: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//       completed: PropTypes.bool.isRequired,
+//       text: PropTypes.string.isRequired
+//     }).isRequired
+//   ).isRequired,
+//   onDeleteTodo: PropTypes.func.isRequired,
+//   onModifyTodo: PropTypes.func.isRequired,
+//   onToggleTodo: PropTypes.func.isRequired
+// }
 
 export default TodoList

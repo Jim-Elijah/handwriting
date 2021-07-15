@@ -35,9 +35,8 @@ let AddTodo = ({ onAddTodo, onClearTodo }) => {
 }
 
 const mapStateToProps = state => {
-  console.log('addtodo', state)
   return {
-    todos: state.todos
+    
   }
 }
 

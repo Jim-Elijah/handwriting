@@ -19,7 +19,7 @@ const getVisibleTodos = (todos, filter) => {
 
 const mapStateToProps = state => {
   // state 即 vuex 的总状态，在 reducer/index.js 中定义
-  // console.log('mapStateToProps', state);
+  // console.log('todoDemo', state);
   // console.log('mapStateToProps', state.todos);
   return {
     // 根据完成状态，筛选数据
