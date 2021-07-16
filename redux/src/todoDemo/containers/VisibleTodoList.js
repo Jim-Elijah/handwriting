@@ -41,6 +41,12 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+// const mapDispatchToProps = {
+//   onDeleteTodo: (id) => deleteTodo(id),
+//   onModifyTodo: (id, text) => modifyTodo(id, text),
+//   onToggleTodo: id => toggleTodo(id),
+// }
+
 // connect 高阶组件，将 state 和 dispatch 注入到组件 props 中
 const VisibleTodoList = connect(
   mapStateToProps,

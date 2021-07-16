@@ -28,22 +28,16 @@ const connect = (mapStateToProps=()=>{}, mapDispatchToProps, mergeProps, options
           if(typeof mapDispatchToProps === 'object'){
             const keys = Object.keys(mapDispatchToProps)
             keys.forEach(key => {
-                dispatchProps[key] = () => {
-                    // console.log('object', dispatchProps[key])
-                    dispatch(mapDispatchToProps[key])
+                dispatchProps[key] = (...args) => {
+                    dispatch(mapDispatchToProps[key](...args))
                 }
             })
           } else if(typeof mapDispatchToProps === 'function') {
-            // console.log('function')
             dispatchProps = mapDispatchToProps(dispatch, this.state.ownProps);
           }
           else {
             console.error(`${mapDispatchToProps} is neither an"object" nor a "function"!`)
           }
-          // console.log('ownProps', this.state.ownProps)
-          // console.log('stateProps', stateProps)
-          // console.log('dispatchProps', dispatchProps)
-          // console.log('-----------------------------------')
           this.setState({
               allProps: {
                   ...this.state.ownProps,
@@ -55,9 +49,7 @@ const connect = (mapStateToProps=()=>{}, mapDispatchToProps, mergeProps, options
       render() {
           const { allProps } = this.state;
           return (
-            <Context.Consumer>
-              {(value) => <WrappedComp {...allProps}  {...value}/>}
-            </Context.Consumer>
+            <WrappedComp {...allProps} />
           )
       }
   }
