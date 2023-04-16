@@ -1,0 +1,10 @@
+## 该仓库是Jim-Elijah学习Redux、React-Redux并手写核心API的记录。
+
+src下6个章节介绍：
+
+- 00-withoutRedux   没有使用状态管理库；
+- 01-whyRedux   使用Redux，但没有使用React-Redux，需要手动subscribe，当state改变时执行订阅传入的回调然后更新视图；和上一节对比，理解为什么使用Redux；
+- 02-whyReactRedux  同时使用官方Redux和React-Redux；和上一节对比，理解为什么使用React-Redux；
+- 03-howRedux   使用官方的React-Redux，手写自己的Redux并引入、使用；即手写Redux；
+- 04-howReactRedux  使用官方的Redux，手写自己的React-Redux并引入、使用；即手写React-Redux；
+- 05-finalEdition  手写自己的Redux、React-Redux和简单实现的logger、thunk中间件并引入、使用；即手写Redux、React-Redux和logger、thunk中间件；仅用于学习源码，请勿投入实际项目中使用；

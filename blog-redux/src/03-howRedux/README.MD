@@ -1,0 +1,1 @@
+## 该文件夹演示手写Redux，但React-Redux还是用官方的，下一节手写React-Redux

@@ -1,0 +1,11 @@
+export const ADD_TODO = 'ADD_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
+export const MODIFY_TODO = 'MODIFY_TODO';
+export const TOGGLE_TODO = 'TOGGLE_TODO';
+export const CLEAR_TODO = 'CLEAR_TODO';
+
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
+
+export const FETCHING_DATA = 'FETCHING_DATA'
+export const FETCHING_SUCCESS = 'FETCHING_SUCCESS'
+export const FETCHING_ERROR = 'FETCHING_ERROR'

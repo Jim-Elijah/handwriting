@@ -1,5 +1,4 @@
-// import { combineReducers } from 'redux'
-import { combineReducers } from '../lib/redux'
+import { combineReducers } from 'redux'
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
 

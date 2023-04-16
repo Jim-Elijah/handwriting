@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  padding-left: 20px;
+}
+
+.btn {
+  margin-left: 10px;
+}
+
+.todoItem {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.filter {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.active {
+  color: blue;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.fetch-demo {
+  margin-top: 10px;
+}
+
+.fetch-wrapper {
+  margin-left: 5px;
+}
+.fetch-res {
+  font-weight: 500;
+  color: blue;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  font-weight: 600;
+}

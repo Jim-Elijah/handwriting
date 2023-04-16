@@ -1,5 +1,4 @@
-// import { connect } from 'react-redux'
-import { connect } from '../lib/react-redux'
+import { connect } from 'react-redux'
 import actions from '../actions'
 import TodoList from '../components/TodoList'
 
@@ -18,9 +17,6 @@ const getVisibleTodos = (todos, filter) => {
 }
 
 const mapStateToProps = state => {
-  // state 即 vuex 的总状态，在 reducer/index.js 中定义
-  // console.log('todoDemo', state);
-  // console.log('mapStateToProps', state.todos);
   return {
     // 根据完成状态，筛选数据
     todos: getVisibleTodos(state.todos, state.visibilityFilter),
